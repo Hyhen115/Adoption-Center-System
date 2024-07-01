@@ -15,7 +15,7 @@ unsigned int sumStringChars(const string &str)
     return sum;
 }
 
-// TASK 1.1: VaccinationStatus default constructor
+
 VaccinationStatus::VaccinationStatus() : numVaccines(0)
 {
 
@@ -30,7 +30,6 @@ VaccinationStatus::VaccinationStatus() : numVaccines(0)
     }
 }
 
-// TASK 1.2: VaccinationStatus::addVaccine(const string&)
 // - If the table is not at least half empty, output the first error message and return.
 // - Else, calculate k = sumStringChars(v) and hash(k) = k % VACCINE_TABLE_SIZE
 //   Follow the quadratic probing formula: h(i) = [hash(k) + i^2] % VACCINE_TABLE_SIZE
@@ -101,7 +100,6 @@ void VaccinationStatus::addVaccine(const string &v)
     }
 }
 
-// TASK 1.3: VaccinationStatus::hasVaccine(const string&) const
 // Returns true if the vaccine exists in the table, false otherwise
 bool VaccinationStatus::hasVaccine(const string &v) const
 {

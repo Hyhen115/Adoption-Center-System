@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-// TASK 4.1: AdoptionCenter constructor
+// AdoptionCenter constructor
 // Initialize all data members to represent an empty database.
 // The BSTs need to be initialized with their comparison functions:
 // - NAME: Sort by species name (including breed), in increasing lexicographic order
@@ -14,11 +14,7 @@ using namespace std;
 // - a negative value if a1 < a2
 // - 0 if a1 == a2
 // - a positive value if a1 > a2
-//
-// Hints:
-// - You can write lambda functions to pass into the BST constructors
-// - For comparing strings, look up the documentation for std::string::compare()
-// - Be careful when performing arithmetic calculations with unsigned int
+
 AdoptionCenter::AdoptionCenter() : animals(nullptr), numAnimals(0), sortedAnimals{
                                                                         // NAME (0)
                                                                         BST([](const Animal *a1, const Animal *a2)
@@ -138,7 +134,7 @@ AdoptionCenter::~AdoptionCenter()
     delete [] animals;
 }
 
-// TASK 4.3: AdoptionCenter::addAnimal(Animal*)
+
 // Add an animal to the dynamic-length array data member,
 // by increasing its size by 1 and increment numAnimals accordingly.
 // Add the animal to the end of the array,
@@ -196,7 +192,7 @@ void AdoptionCenter::addAnimal(Animal *a)
     return;
 }
 
-// TASK 4.4: AdoptionCenter::removeAnimal(unsigned int)
+
 // Remove an animal from the database by ID.
 // If the ID does not exist, do nothing.
 // Otherwise, resize the array to decrease its size by 1,
@@ -284,7 +280,7 @@ bool AdoptionCenter::removeAnimal(unsigned int id)
     return false;
 }
 
-// TASK 4.5: AdoptionCenter::incrementAge()
+
 // Increment the age of all animals by 1.
 void AdoptionCenter::incrementAge()
 {
@@ -302,7 +298,7 @@ void AdoptionCenter::incrementAge()
     return;
 }
 
-// TASK 4.6: AdoptionCenter::setAnimalHealthCondition(unsigned int, const HealthCondition&)
+
 // Modify the animal with the specified ID's health condition to the provided parameter.
 // If the animal does not exist, do nothing.
 // Else, ensure the BST for health condition is sorted after the modification.
@@ -364,7 +360,7 @@ void AdoptionCenter::setAnimalHealthCondition(unsigned int id, const HealthCondi
     sortedAnimals[HEALTH].insert(a);
 }
 
-// TASK 4.7: AdoptionCenter:addAnimalVaccine(unsigned int, const string&)
+
 // Add the provided vaccine to the animal specified by ID.
 // If the animal does not exist, do nothing.
 // Else, ensure the BST for vaccine status is sorted after the modification.
@@ -417,7 +413,6 @@ void AdoptionCenter::addAnimalVaccine(unsigned int id, const string &v)
     sortedAnimals[VACCINE].insert(a);
 }
 
-// TASK 4.8: AdoptionCenter::setAnimalSpecialNeeds(unsigned int, const std::string&)
 // Modify the animal with the specified ID's special needs to the provided parameter.
 // If the animal does not exist, do nothing.
 void AdoptionCenter::setAnimalSpecialNeeds(unsigned int id, const std::string &n)

@@ -29,7 +29,7 @@ bool containAnyWords(string src, string filterWords)
     return src.find(filterWords) != string::npos;
 }
 
-// TASK 2.1: Filter::match(const Animal&) const
+
 // Returns true if the animal satisfies ALL 3 conditions:
 // - species (including breed) contains *any* of the words in speciesMatch
 // - health description contains *any* of the words in healthMatch
@@ -70,7 +70,6 @@ bool Filter::match(const Animal &a) const
     // return true;
 }
 
-// TASK 2.2: AnimalLLnode::print(unsigned int&, unsigned int&, const Filter&) const
 // Print the animals in this linked list if it matches with the filter.
 // The linked list should be maintained such that it is in decreasing ID order.
 //
@@ -104,7 +103,7 @@ void AnimalLLnode::print(unsigned int &ignoreCount, unsigned int &displayCount, 
     }
 }
 
-// TASK 2.3: BSTnode destructor
+
 BSTnode::~BSTnode()
 {
 
@@ -127,7 +126,6 @@ BSTnode::~BSTnode()
     // no need delete -> cuz not ptr, is data member will auto killed
 }
 
-// TASK 2.4: BSTnode::addAnimal(const Animal* a)
 // Add an animal to the linked list.
 // Ensure the order is *decreasing ID*, e.g.: 7[Cat] -> 6[Cat] -> 5[Dog] -> 3[Cat] -> 1[Bird] -> 0[Cat]
 // You may assume no two animals with the same ID will be added to a node
@@ -191,7 +189,6 @@ void BSTnode::addAnimal(const Animal *a)
     return;
 }
 
-// TASK 2.5: BSTnode::addAnimal(const Animal* a)
 // Remove an animal from the linked list.
 // Ensure the order of the other animals are kept.
 // If the animal does not exist, do nothing.
@@ -283,7 +280,7 @@ void BSTnode::removeAnimal(const Animal *a)
     return;
 }
 
-// TASK 3.1: BST destructor
+
 BST::~BST()
 {
 
@@ -311,7 +308,7 @@ BSTnode *&BST::findMinNode()
     return this->root->left.findMinNode();
 }
 
-// TASK 3.3: BST::insert(const Animal* a)
+
 // Insert an animal 'a' to the BST.
 // Use the comparator "data member function" to compare the animal with the current node:
 // - If 'a' is "less than" the current node, insert it to the left subtree.
@@ -360,7 +357,7 @@ void BST::insert(const Animal *a)
     return;
 }
 
-// TASK 3.4: BST::remove(const Animal* a)
+
 // Remove an animal 'a' from the BST
 // Follow the same steps in BST::insert() to locate the node to remove.
 // Removal strategy is similar to lecture notes example with a few differences:
@@ -509,7 +506,7 @@ void BST::remove(const Animal *a)
     return;
 }
 
-// TASK 3.5: BST::print(unsigned int&, unsigned int&, const Filter&) const
+
 // Print the BST using in-order traversal.
 //
 // E.g.: Consider a BST containing animals sorted by species name:

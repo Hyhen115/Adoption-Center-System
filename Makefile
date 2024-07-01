@@ -9,14 +9,14 @@ OBJS_TEST = $(SRCS_TEST:.cpp=.o)
 DEPS	= $(OBJS:.o=.d)
 DEPS_TEST = $(OBJS_TEST:.o=.d)
 
-all: PA3.exe 
+all: adopt_test.exe 
 
-PA3.exe: $(OBJS) 
+adopt.exe: $(OBJS) 
 	g++ $(CPPFLAGS) -o $@ $^
 
 test: PA3_test.exe
 
-PA3_test.exe: $(OBJS_TEST)
+adopt_test.exe: $(OBJS_TEST)
 	g++ $(CPPFLAGS) -o $@ $^
 
 # To include the .d dependency files
